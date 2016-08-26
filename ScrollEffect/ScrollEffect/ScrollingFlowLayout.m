@@ -28,8 +28,10 @@
         currentSpeed = 0;
     }else{
         NSTimeInterval interval = [currentTime timeIntervalSinceDate:lastOffsetCapture];
-        currentSpeed = fabs(currentOffset - previousOffset)/interval;
+        CGPoint velocity = [[self.collectionView panGestureRecognizer] velocityInView:self.collectionView];
+        currentSpeed = velocity.y == 0 ? fabs(currentOffset - previousOffset)/interval : 0;
     }
+    
     lastOffsetCapture = currentTime;
     previousOffset = currentOffset;
     
