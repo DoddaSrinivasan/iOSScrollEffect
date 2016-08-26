@@ -34,10 +34,10 @@
     previousOffset = currentOffset;
     
     
-    CGFloat collectionViewCentreY = self.collectionView.bounds.size.height*2/3;
+    CGFloat collectionViewCentreY = self.collectionView.bounds.size.height*3/4 - 50;
     NSMutableArray<UICollectionViewLayoutAttributes *> *arrayAttributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     for(ScrollingLayoutAttributes *attributes in  arrayAttributes){
-        if(currentSpeed > 1500){
+        if(currentSpeed > 1000){
             attributes.percentComplete = 1;
             continue;
         }

@@ -9,15 +9,12 @@
 #import "ItemCell.h"
 #import "ScrollingLayoutAttributes.h"
 
-#define WHITE_VIEW_FINAL_TRAILING  35
-#define WHITE_VIEW_FINAL_LEADING  15
+#define WHITE_VIEW_FINAL_TRAILING  15
+#define WHITE_VIEW_FINAL_LEADING  35
 
 @implementation ItemCell
 
 -(void)prepareForReuse{
-    [self updateWhiteView:0];
-    [self updateImageView:0];
-    [self updateContentView:0];
     
 }
 
@@ -43,7 +40,7 @@
 
 -(void)updateImageView:(CGFloat)percentage{
     CGSize bounds = self.bounds.size;
-    if(_indexPath.item%2 != 0){
+    if(_indexPath.item%2 == 0){
         CGFloat imgViewInitialCentre = bounds.height/2;
         CGFloat imgViewInitialTrailing = -(160 + 30); //width + trailing
         
