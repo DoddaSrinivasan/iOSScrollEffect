@@ -14,15 +14,24 @@
 
 @implementation ItemCell
 
--(void)prepareForReuse{
-    
-}
-
 -(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
     ScrollingLayoutAttributes *attributes = (ScrollingLayoutAttributes *)layoutAttributes;
+    _viewContent.alpha = 0.95;
+    _indexPath = attributes.indexPath;
+    
+    if(_indexPath.item%2 == 0){
+        _viewImage.layer.zPosition = 999;
+        _viewContent.layer.zPosition = 888;
+    }else{
+        _viewImage.layer.zPosition = 888;
+        _viewContent.layer.zPosition = 999;
+    }
+    [self layoutIfNeeded];
+    
     [self updateWhiteView:attributes.percentComplete];
     [self updateImageView:attributes.percentComplete];
+    [self updateContentView:attributes.percentComplete];
 }
 
 -(void)updateWhiteView:(CGFloat)percentage{
@@ -46,18 +55,33 @@
         
         _constraintImgCentre.constant = -25 + (1-percentage)*imgViewInitialCentre;
         _constraintImgTrailing.constant = 30 + (1-percentage)*imgViewInitialTrailing;
+        _constraintImageWidth.constant = 160;
     }else{
         CGFloat imgViewInitialCentre = bounds.height/2;
         CGFloat imgViewInitialTrailing = bounds.width + 160 + 30; //width + trailing
         
         _constraintImgCentre.constant = 25 + (1-percentage)*imgViewInitialCentre;
         _constraintImgTrailing.constant = 20 + (1-percentage)*imgViewInitialTrailing;
-        _constraintImageWidth.constant = 160 + percentage*(bounds.width*2/3 - 160);
+        _constraintImageWidth.constant = 160 + percentage*(bounds.width*3/4 - 160);
     }
 }
 
 -(void)updateContentView:(CGFloat)percentage{
+    CGSize bounds = self.bounds.size;
+    if(_indexPath.item%2 == 0){
+        CGFloat contentViewInitialLeading = bounds.width;
+        CGFloat contentViewInitialWidth = bounds.width - 80;
     
+        _constraintContentCentre.constant = -percentage*20;
+        _constraintContentLeading.constant = 15 + (1-percentage)*contentViewInitialLeading;
+        _constraintContentWidth.constant = bounds.width - 50 - 140 - 15 + (1-percentage)*contentViewInitialWidth;
+    }else{
+        CGFloat contentViewInitialLeading = bounds.width;
+        
+        _constraintContentCentre.constant = percentage*45;
+        _constraintContentLeading.constant = 40 + (1-percentage)*contentViewInitialLeading;
+        _constraintContentWidth.constant = 140; 
+    }
 }
 
 @end

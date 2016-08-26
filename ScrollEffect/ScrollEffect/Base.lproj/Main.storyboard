@@ -153,19 +153,23 @@
                                             <constraint firstAttribute="trailing" secondItem="jJB-Ks-qSW" secondAttribute="trailing" constant="30" id="7Qt-7J-ouq"/>
                                             <constraint firstItem="EpO-TP-fFv" firstAttribute="leading" secondItem="CgU-bK-J07" secondAttribute="leading" constant="40" id="7lg-VA-td1"/>
                                             <constraint firstAttribute="trailing" secondItem="EpO-TP-fFv" secondAttribute="trailing" constant="40" id="Iok-mo-cby"/>
-                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="top" secondItem="n2J-k0-Kra" secondAttribute="top" constant="4" id="aRG-0G-Swv"/>
+                                            <constraint firstItem="n2J-k0-Kra" firstAttribute="leading" secondItem="CgU-bK-J07" secondAttribute="leading" constant="20" id="Ntm-np-qB0"/>
+                                            <constraint firstItem="n2J-k0-Kra" firstAttribute="centerY" secondItem="CgU-bK-J07" secondAttribute="centerY" constant="-19" id="agF-yn-dJj"/>
                                             <constraint firstItem="jJB-Ks-qSW" firstAttribute="centerY" secondItem="CgU-bK-J07" secondAttribute="centerY" constant="-25" id="fF0-nv-MSG"/>
                                             <constraint firstItem="EpO-TP-fFv" firstAttribute="centerY" secondItem="CgU-bK-J07" secondAttribute="centerY" id="iBL-5p-MVf"/>
-                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="leading" secondItem="n2J-k0-Kra" secondAttribute="leading" constant="20" id="w5o-Mj-ZtK"/>
                                         </constraints>
                                         <size key="customSize" width="600" height="600"/>
                                         <connections>
+                                            <outlet property="constraintContentCentre" destination="agF-yn-dJj" id="mqU-FX-VUD"/>
+                                            <outlet property="constraintContentLeading" destination="Ntm-np-qB0" id="Xkg-5i-5Lo"/>
+                                            <outlet property="constraintContentWidth" destination="8Cf-lC-roi" id="Pg2-Wf-bwm"/>
                                             <outlet property="constraintImageWidth" destination="apu-ee-0yY" id="4B8-gF-HRD"/>
                                             <outlet property="constraintImgCentre" destination="fF0-nv-MSG" id="soG-Aq-Afz"/>
                                             <outlet property="constraintImgTrailing" destination="7Qt-7J-ouq" id="S46-nf-JW7"/>
                                             <outlet property="constraintWhiteViewLeading" destination="7lg-VA-td1" id="erB-D1-7DU"/>
                                             <outlet property="constraintWhiteViewTrailing" destination="Iok-mo-cby" id="sFa-4m-ic8"/>
-                                            <outlet property="viewContent" destination="n2J-k0-Kra" id="8BY-zp-rvA"/>
+                                            <outlet property="viewContent" destination="n2J-k0-Kra" id="Ya2-gM-gjx"/>
+                                            <outlet property="viewImage" destination="jJB-Ks-qSW" id="a67-kN-5Oa"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
