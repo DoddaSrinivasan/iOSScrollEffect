@@ -17,6 +17,8 @@
 		3065783B1D703DFC00B82E4A /* ScrollingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3065783A1D703DFC00B82E4A /* ScrollingFlowLayout.m */; };
 		3065783E1D703E1300B82E4A /* ScrollingLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */; };
 		306578411D703ECC00B82E4A /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 306578401D703ECC00B82E4A /* ItemCell.m */; };
+		306578441D705B8800B82E4A /* pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 306578431D705B8800B82E4A /* pattern.png */; };
+		306578461D70657200B82E4A /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 306578451D70657200B82E4A /* car.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingLayoutAttributes.m; sourceTree = "<group>"; };
 		3065783F1D703ECC00B82E4A /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		306578401D703ECC00B82E4A /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
+		306578431D705B8800B82E4A /* pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pattern.png; sourceTree = "<group>"; };
+		306578451D70657200B82E4A /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		3065781C1D70219400B82E4A /* ScrollEffect */ = {
 			isa = PBXGroup;
 			children = (
+				306578421D705B6E00B82E4A /* Assets */,
 				306578381D703DD200B82E4A /* ScrollingFlowLayout */,
 				306578341D70237800B82E4A /* CustomViews */,
 				306578201D70219400B82E4A /* AppDelegate.h */,
@@ -113,6 +118,15 @@
 				3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */,
 			);
 			name = ScrollingFlowLayout;
+			sourceTree = "<group>";
+		};
+		306578421D705B6E00B82E4A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				306578451D70657200B82E4A /* car.jpg */,
+				306578431D705B8800B82E4A /* pattern.png */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +186,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				306578441D705B8800B82E4A /* pattern.png in Resources */,
 				3065782D1D70219400B82E4A /* LaunchScreen.storyboard in Resources */,
+				306578461D70657200B82E4A /* car.jpg in Resources */,
 				3065782A1D70219400B82E4A /* Assets.xcassets in Resources */,
 				306578281D70219400B82E4A /* Main.storyboard in Resources */,
 			);

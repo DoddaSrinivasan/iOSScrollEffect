@@ -13,7 +13,15 @@
 
 @property (weak, nonatomic) NSIndexPath *indexPath;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWhiteViewTrailing;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constantWhiteViewLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWhiteViewTrailing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintWhiteViewLeading;
+
+@property (weak, nonatomic) IBOutlet CardView *viewContent;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgCentre;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgTrailing;
+
 
 @end

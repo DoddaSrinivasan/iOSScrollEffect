@@ -34,27 +34,20 @@
     previousOffset = currentOffset;
     
     
-    CGFloat collectionViewCentreY = self.collectionView.bounds.size.height/2;
+    CGFloat collectionViewCentreY = self.collectionView.bounds.size.height*2/3;
     NSMutableArray<UICollectionViewLayoutAttributes *> *arrayAttributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     for(ScrollingLayoutAttributes *attributes in  arrayAttributes){
+        if(currentSpeed > 1500){
+            attributes.percentComplete = 1;
+            continue;
+        }
         CGFloat yInCollectionViewBounds = MAX(0, attributes.center.y - self.collectionView.contentOffset.y);
         attributes.percentComplete = MAX(0,1 - (yInCollectionViewBounds - collectionViewCentreY)/collectionViewCentreY);
-        if(attributes.percentComplete > 1 || currentSpeed > 1000){
+        if(attributes.percentComplete > 1){
             attributes.percentComplete = 1;
         }
     }
     return arrayAttributes;
-}
-
--(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CGFloat collectionViewCentreY = self.collectionView.bounds.size.height/2;
-    ScrollingLayoutAttributes *attributes = (ScrollingLayoutAttributes *)[super layoutAttributesForItemAtIndexPath:indexPath];
-    CGFloat yInCollectionViewBounds = MAX(0, attributes.center.y - self.collectionView.contentOffset.y);
-    attributes.percentComplete = MAX(0,1 - (yInCollectionViewBounds - collectionViewCentreY)/collectionViewCentreY);
-    if(attributes.percentComplete > 1){
-        attributes.percentComplete = 1;
-    }
-    return attributes;
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{

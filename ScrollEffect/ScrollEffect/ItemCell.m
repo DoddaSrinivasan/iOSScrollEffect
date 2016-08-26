@@ -14,10 +14,18 @@
 
 @implementation ItemCell
 
+-(void)prepareForReuse{
+    [self updateWhiteView:0];
+    [self updateImageView:0];
+    [self updateContentView:0];
+    
+}
+
 -(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
     ScrollingLayoutAttributes *attributes = (ScrollingLayoutAttributes *)layoutAttributes;
     [self updateWhiteView:attributes.percentComplete];
+    [self updateImageView:attributes.percentComplete];
 }
 
 -(void)updateWhiteView:(CGFloat)percentage{
@@ -25,12 +33,34 @@
     CGFloat whiteViewInitialLeadingBounds = bounds.width + WHITE_VIEW_FINAL_LEADING;
     CGFloat whiteViewInitialTrailingBounds = bounds.width + WHITE_VIEW_FINAL_TRAILING;
     if(_indexPath.item%2 == 0){
-        _constantWhiteViewLeading.constant = WHITE_VIEW_FINAL_LEADING + (1-percentage)*whiteViewInitialLeadingBounds;
-        _constantWhiteViewTrailing.constant = WHITE_VIEW_FINAL_TRAILING - (1-percentage)*whiteViewInitialTrailingBounds;
+        _constraintWhiteViewLeading.constant = WHITE_VIEW_FINAL_LEADING + (1-percentage)*whiteViewInitialLeadingBounds;
+        _constraintWhiteViewTrailing.constant = WHITE_VIEW_FINAL_TRAILING - (1-percentage)*whiteViewInitialTrailingBounds;
     }else{
-        _constantWhiteViewLeading.constant = WHITE_VIEW_FINAL_TRAILING - (1-percentage)*whiteViewInitialTrailingBounds;
-        _constantWhiteViewTrailing.constant = WHITE_VIEW_FINAL_LEADING + (1-percentage)*whiteViewInitialLeadingBounds;
+        _constraintWhiteViewLeading.constant = WHITE_VIEW_FINAL_TRAILING - (1-percentage)*whiteViewInitialTrailingBounds;
+        _constraintWhiteViewTrailing.constant = WHITE_VIEW_FINAL_LEADING + (1-percentage)*whiteViewInitialLeadingBounds;
     }
+}
+
+-(void)updateImageView:(CGFloat)percentage{
+    CGSize bounds = self.bounds.size;
+    if(_indexPath.item%2 != 0){
+        CGFloat imgViewInitialCentre = bounds.height/2;
+        CGFloat imgViewInitialTrailing = -(160 + 30); //width + trailing
+        
+        _constraintImgCentre.constant = -25 + (1-percentage)*imgViewInitialCentre;
+        _constraintImgTrailing.constant = 30 + (1-percentage)*imgViewInitialTrailing;
+    }else{
+        CGFloat imgViewInitialCentre = bounds.height/2;
+        CGFloat imgViewInitialTrailing = bounds.width + 160 + 30; //width + trailing
+        
+        _constraintImgCentre.constant = 25 + (1-percentage)*imgViewInitialCentre;
+        _constraintImgTrailing.constant = 20 + (1-percentage)*imgViewInitialTrailing;
+        _constraintImageWidth.constant = 160 + percentage*(bounds.width*2/3 - 160);
+    }
+}
+
+-(void)updateContentView:(CGFloat)percentage{
+    
 }
 
 @end

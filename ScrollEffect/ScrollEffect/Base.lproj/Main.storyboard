@@ -54,10 +54,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpO-TP-fFv" customClass="CardView">
-                                                    <rect key="frame" x="35" y="200" width="540" height="200"/>
+                                                    <rect key="frame" x="40" y="210" width="520" height="180"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="aiQ-Mp-HtV"/>
+                                                        <constraint firstAttribute="height" constant="180" id="aiQ-Mp-HtV"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -80,19 +80,92 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2J-k0-Kra" customClass="CardView">
+                                                    <rect key="frame" x="20" y="206" width="150" height="150"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="4KY-hn-CSh"/>
+                                                        <constraint firstAttribute="width" constant="150" id="8Cf-lC-roi"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetHeight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="6"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJB-Ks-qSW" userLabel="View Image" customClass="CardView">
+                                                    <rect key="frame" x="410" y="195" width="160" height="160"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-6U-xqP">
+                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="aRD-6U-xqP" firstAttribute="leading" secondItem="jJB-Ks-qSW" secondAttribute="leading" id="6xJ-Iz-cwI"/>
+                                                        <constraint firstAttribute="height" constant="160" id="Mi4-LY-i8P"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aRD-6U-xqP" secondAttribute="bottom" id="OkN-Hb-h8u"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aRD-6U-xqP" secondAttribute="trailing" id="RKo-Ww-2Vb"/>
+                                                        <constraint firstItem="aRD-6U-xqP" firstAttribute="top" secondItem="jJB-Ks-qSW" secondAttribute="top" id="TsQ-LZ-N7W"/>
+                                                        <constraint firstAttribute="width" constant="160" id="apu-ee-0yY"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetHeight">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.59999999999999998"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="leading" secondItem="CgU-bK-J07" secondAttribute="leading" constant="35" id="7lg-VA-td1"/>
-                                            <constraint firstAttribute="trailing" secondItem="EpO-TP-fFv" secondAttribute="trailing" constant="25" id="Iok-mo-cby"/>
+                                            <constraint firstAttribute="trailing" secondItem="jJB-Ks-qSW" secondAttribute="trailing" constant="30" id="7Qt-7J-ouq"/>
+                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="leading" secondItem="CgU-bK-J07" secondAttribute="leading" constant="40" id="7lg-VA-td1"/>
+                                            <constraint firstAttribute="trailing" secondItem="EpO-TP-fFv" secondAttribute="trailing" constant="40" id="Iok-mo-cby"/>
+                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="top" secondItem="n2J-k0-Kra" secondAttribute="top" constant="4" id="aRG-0G-Swv"/>
+                                            <constraint firstItem="jJB-Ks-qSW" firstAttribute="centerY" secondItem="CgU-bK-J07" secondAttribute="centerY" constant="-25" id="fF0-nv-MSG"/>
                                             <constraint firstItem="EpO-TP-fFv" firstAttribute="centerY" secondItem="CgU-bK-J07" secondAttribute="centerY" id="iBL-5p-MVf"/>
+                                            <constraint firstItem="EpO-TP-fFv" firstAttribute="leading" secondItem="n2J-k0-Kra" secondAttribute="leading" constant="20" id="w5o-Mj-ZtK"/>
                                         </constraints>
                                         <size key="customSize" width="600" height="600"/>
                                         <connections>
-                                            <outlet property="constantWhiteViewLeading" destination="7lg-VA-td1" id="fdC-lH-GuQ"/>
-                                            <outlet property="constantWhiteViewTrailing" destination="Iok-mo-cby" id="y6s-20-x4o"/>
+                                            <outlet property="constraintImageWidth" destination="apu-ee-0yY" id="4B8-gF-HRD"/>
+                                            <outlet property="constraintImgCentre" destination="fF0-nv-MSG" id="soG-Aq-Afz"/>
+                                            <outlet property="constraintImgTrailing" destination="7Qt-7J-ouq" id="S46-nf-JW7"/>
+                                            <outlet property="constraintWhiteViewLeading" destination="7lg-VA-td1" id="erB-D1-7DU"/>
+                                            <outlet property="constraintWhiteViewTrailing" destination="Iok-mo-cby" id="sFa-4m-ic8"/>
+                                            <outlet property="viewContent" destination="n2J-k0-Kra" id="8BY-zp-rvA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -121,4 +194,7 @@
             <point key="canvasLocation" x="1137" y="399"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="car.jpg" width="460" height="287"/>
+    </resources>
 </document>

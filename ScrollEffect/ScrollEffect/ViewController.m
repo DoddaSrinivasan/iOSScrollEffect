@@ -11,7 +11,9 @@
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
 
-@interface ViewController ()
+@interface ViewController (){
+    UIImage *_patternImage;
+}
 
 @end
 
@@ -20,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIGraphicsBeginImageContext(CGSizeMake(50, 50));
+    [[UIImage imageNamed:@"pattern"] drawInRect:CGRectMake(0, 0, 50, 50)];
+    _patternImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -29,6 +35,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
     cell.indexPath = indexPath;
+    cell.viewContent.backgroundColor = [UIColor colorWithPatternImage:_patternImage];
     return cell;
 }
 
