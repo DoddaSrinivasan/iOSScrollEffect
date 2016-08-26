@@ -13,6 +13,10 @@
 		306578281D70219400B82E4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306578261D70219400B82E4A /* Main.storyboard */; };
 		3065782A1D70219400B82E4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306578291D70219400B82E4A /* Assets.xcassets */; };
 		3065782D1D70219400B82E4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3065782B1D70219400B82E4A /* LaunchScreen.storyboard */; };
+		306578371D70239600B82E4A /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 306578361D70239600B82E4A /* CardView.m */; };
+		3065783B1D703DFC00B82E4A /* ScrollingFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3065783A1D703DFC00B82E4A /* ScrollingFlowLayout.m */; };
+		3065783E1D703E1300B82E4A /* ScrollingLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */; };
+		306578411D703ECC00B82E4A /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 306578401D703ECC00B82E4A /* ItemCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		306578291D70219400B82E4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3065782C1D70219400B82E4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3065782E1D70219400B82E4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		306578351D70239600B82E4A /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		306578361D70239600B82E4A /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		306578391D703DFC00B82E4A /* ScrollingFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingFlowLayout.h; sourceTree = "<group>"; };
+		3065783A1D703DFC00B82E4A /* ScrollingFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingFlowLayout.m; sourceTree = "<group>"; };
+		3065783C1D703E1300B82E4A /* ScrollingLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollingLayoutAttributes.h; sourceTree = "<group>"; };
+		3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollingLayoutAttributes.m; sourceTree = "<group>"; };
+		3065783F1D703ECC00B82E4A /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
+		306578401D703ECC00B82E4A /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,8 @@
 		3065781C1D70219400B82E4A /* ScrollEffect */ = {
 			isa = PBXGroup;
 			children = (
+				306578381D703DD200B82E4A /* ScrollingFlowLayout */,
+				306578341D70237800B82E4A /* CustomViews */,
 				306578201D70219400B82E4A /* AppDelegate.h */,
 				306578211D70219400B82E4A /* AppDelegate.m */,
 				306578231D70219400B82E4A /* ViewController.h */,
@@ -67,6 +81,8 @@
 				3065782B1D70219400B82E4A /* LaunchScreen.storyboard */,
 				3065782E1D70219400B82E4A /* Info.plist */,
 				3065781D1D70219400B82E4A /* Supporting Files */,
+				3065783F1D703ECC00B82E4A /* ItemCell.h */,
+				306578401D703ECC00B82E4A /* ItemCell.m */,
 			);
 			path = ScrollEffect;
 			sourceTree = "<group>";
@@ -77,6 +93,26 @@
 				3065781E1D70219400B82E4A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		306578341D70237800B82E4A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				306578351D70239600B82E4A /* CardView.h */,
+				306578361D70239600B82E4A /* CardView.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		306578381D703DD200B82E4A /* ScrollingFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				306578391D703DFC00B82E4A /* ScrollingFlowLayout.h */,
+				3065783A1D703DFC00B82E4A /* ScrollingFlowLayout.m */,
+				3065783C1D703E1300B82E4A /* ScrollingLayoutAttributes.h */,
+				3065783D1D703E1300B82E4A /* ScrollingLayoutAttributes.m */,
+			);
+			name = ScrollingFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,8 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				306578371D70239600B82E4A /* CardView.m in Sources */,
+				3065783B1D703DFC00B82E4A /* ScrollingFlowLayout.m in Sources */,
 				306578251D70219400B82E4A /* ViewController.m in Sources */,
+				306578411D703ECC00B82E4A /* ItemCell.m in Sources */,
 				306578221D70219400B82E4A /* AppDelegate.m in Sources */,
+				3065783E1D703E1300B82E4A /* ScrollingLayoutAttributes.m in Sources */,
 				3065781F1D70219400B82E4A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

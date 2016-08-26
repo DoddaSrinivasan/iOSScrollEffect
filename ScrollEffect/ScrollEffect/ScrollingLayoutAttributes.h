@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ScrollingLayoutAttributes.h
 //  ScrollEffect
 //
 //  Created by Srinivasan Dodda on 26/08/16.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ScrollingLayoutAttributes : UICollectionViewLayoutAttributes
 
+@property (assign) CGFloat percentComplete;
 
 @end
-
