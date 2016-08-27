@@ -19,14 +19,18 @@
 @property (weak, nonatomic) IBOutlet CardView *viewContent;
 
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageWidth;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgCentre;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgTrailing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageHolderWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgHolderCentre;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgHolderTrailing;
 @property (weak, nonatomic) IBOutlet CardView *viewImage;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentWidth;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentCentre;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentLeading;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgTrailing;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgLeading;
 
 
 @end

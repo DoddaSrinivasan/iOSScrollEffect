@@ -111,18 +111,34 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJB-Ks-qSW" userLabel="View Image" customClass="CardView">
                                                     <rect key="frame" x="410" y="195" width="160" height="160"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-6U-xqP">
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4r-IW-7mr">
                                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                                        </imageView>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-6U-xqP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="aRD-6U-xqP" secondAttribute="trailing" id="HPp-WU-KIs"/>
+                                                                <constraint firstAttribute="bottom" secondItem="aRD-6U-xqP" secondAttribute="bottom" id="McV-fj-AkF"/>
+                                                                <constraint firstItem="aRD-6U-xqP" firstAttribute="leading" secondItem="V4r-IW-7mr" secondAttribute="leading" id="aH0-Yx-i4s"/>
+                                                                <constraint firstItem="aRD-6U-xqP" firstAttribute="top" secondItem="V4r-IW-7mr" secondAttribute="top" id="k3l-e1-FlQ"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="aRD-6U-xqP" firstAttribute="leading" secondItem="jJB-Ks-qSW" secondAttribute="leading" id="6xJ-Iz-cwI"/>
+                                                        <constraint firstItem="V4r-IW-7mr" firstAttribute="leading" secondItem="jJB-Ks-qSW" secondAttribute="leading" id="14D-O2-gQe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="V4r-IW-7mr" secondAttribute="trailing" id="CGJ-fJ-R5f"/>
                                                         <constraint firstAttribute="height" constant="160" id="Mi4-LY-i8P"/>
-                                                        <constraint firstAttribute="bottom" secondItem="aRD-6U-xqP" secondAttribute="bottom" id="OkN-Hb-h8u"/>
-                                                        <constraint firstAttribute="trailing" secondItem="aRD-6U-xqP" secondAttribute="trailing" id="RKo-Ww-2Vb"/>
-                                                        <constraint firstItem="aRD-6U-xqP" firstAttribute="top" secondItem="jJB-Ks-qSW" secondAttribute="top" id="TsQ-LZ-N7W"/>
+                                                        <constraint firstItem="V4r-IW-7mr" firstAttribute="top" secondItem="jJB-Ks-qSW" secondAttribute="top" id="Noy-GE-rSH"/>
+                                                        <constraint firstItem="V4r-IW-7mr" firstAttribute="leading" secondItem="jJB-Ks-qSW" secondAttribute="leading" id="Xc1-r0-VQx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="V4r-IW-7mr" secondAttribute="trailing" id="aMB-82-CMc"/>
                                                         <constraint firstAttribute="width" constant="160" id="apu-ee-0yY"/>
+                                                        <constraint firstAttribute="bottom" secondItem="V4r-IW-7mr" secondAttribute="bottom" id="c63-H3-kRf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="V4r-IW-7mr" secondAttribute="bottom" id="gpS-kk-K1C"/>
+                                                        <constraint firstItem="V4r-IW-7mr" firstAttribute="top" secondItem="jJB-Ks-qSW" secondAttribute="top" id="rFU-Ua-j2H"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -163,9 +179,11 @@
                                             <outlet property="constraintContentCentre" destination="agF-yn-dJj" id="mqU-FX-VUD"/>
                                             <outlet property="constraintContentLeading" destination="Ntm-np-qB0" id="Xkg-5i-5Lo"/>
                                             <outlet property="constraintContentWidth" destination="8Cf-lC-roi" id="Pg2-Wf-bwm"/>
-                                            <outlet property="constraintImageWidth" destination="apu-ee-0yY" id="4B8-gF-HRD"/>
-                                            <outlet property="constraintImgCentre" destination="fF0-nv-MSG" id="soG-Aq-Afz"/>
-                                            <outlet property="constraintImgTrailing" destination="7Qt-7J-ouq" id="S46-nf-JW7"/>
+                                            <outlet property="constraintImageHolderWidth" destination="apu-ee-0yY" id="tjO-pK-fg4"/>
+                                            <outlet property="constraintImgHolderCentre" destination="fF0-nv-MSG" id="xQb-o0-vU8"/>
+                                            <outlet property="constraintImgHolderTrailing" destination="7Qt-7J-ouq" id="f8b-AG-kfy"/>
+                                            <outlet property="constraintImgLeading" destination="aH0-Yx-i4s" id="F0F-SO-sT8"/>
+                                            <outlet property="constraintImgTrailing" destination="HPp-WU-KIs" id="yqa-M1-X1d"/>
                                             <outlet property="constraintWhiteViewLeading" destination="7lg-VA-td1" id="erB-D1-7DU"/>
                                             <outlet property="constraintWhiteViewTrailing" destination="Iok-mo-cby" id="sFa-4m-ic8"/>
                                             <outlet property="viewContent" destination="n2J-k0-Kra" id="Ya2-gM-gjx"/>

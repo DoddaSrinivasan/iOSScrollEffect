@@ -9,8 +9,8 @@
 #import "ItemCell.h"
 #import "ScrollingLayoutAttributes.h"
 
-#define WHITE_VIEW_FINAL_TRAILING  15
-#define WHITE_VIEW_FINAL_LEADING  35
+#define WHITE_VIEW_FINAL_TRAILING  35
+#define WHITE_VIEW_FINAL_LEADING  15
 
 @implementation ItemCell
 
@@ -38,7 +38,7 @@
     CGSize bounds = self.bounds.size;
     CGFloat whiteViewInitialLeadingBounds = bounds.width + WHITE_VIEW_FINAL_LEADING;
     CGFloat whiteViewInitialTrailingBounds = bounds.width + WHITE_VIEW_FINAL_TRAILING;
-    if(_indexPath.item%2 == 0){
+    if(_indexPath.item%2 != 0){
         _constraintWhiteViewLeading.constant = WHITE_VIEW_FINAL_LEADING + (1-percentage)*whiteViewInitialLeadingBounds;
         _constraintWhiteViewTrailing.constant = WHITE_VIEW_FINAL_TRAILING - (1-percentage)*whiteViewInitialTrailingBounds;
     }else{
@@ -53,16 +53,19 @@
         CGFloat imgViewInitialCentre = bounds.height/2;
         CGFloat imgViewInitialTrailing = -(160 + 30); //width + trailing
         
-        _constraintImgCentre.constant = -25 + (1-percentage)*imgViewInitialCentre;
-        _constraintImgTrailing.constant = 30 + (1-percentage)*imgViewInitialTrailing;
-        _constraintImageWidth.constant = 160;
+        _constraintImgHolderCentre.constant = -25 + (1-percentage)*imgViewInitialCentre;
+        _constraintImgHolderTrailing.constant = 30 + (1-percentage)*imgViewInitialTrailing;
+        _constraintImageHolderWidth.constant = 160;
+        _constraintImgLeading.constant = - 400 + percentage*400;
+        _constraintImgTrailing.constant = 0;
     }else{
-        CGFloat imgViewInitialCentre = bounds.height/2;
         CGFloat imgViewInitialTrailing = bounds.width + 160 + 30; //width + trailing
         
-        _constraintImgCentre.constant = 25 + (1-percentage)*imgViewInitialCentre;
-        _constraintImgTrailing.constant = 20 + (1-percentage)*imgViewInitialTrailing;
-        _constraintImageWidth.constant = 160 + percentage*(bounds.width*3/4 - 160);
+        _constraintImgHolderCentre.constant = percentage*25;
+        _constraintImgHolderTrailing.constant = 20 + (1-percentage)*imgViewInitialTrailing;
+        _constraintImageHolderWidth.constant = bounds.width*3/4;
+        _constraintImgTrailing.constant = - 400 + percentage*400;
+        _constraintImgLeading.constant = 0;
     }
 }
 
@@ -77,8 +80,9 @@
         _constraintContentWidth.constant = bounds.width - 50 - 140 - 15 + (1-percentage)*contentViewInitialWidth;
     }else{
         CGFloat contentViewInitialLeading = bounds.width;
+        CGFloat contentViewInitialCentre = bounds.height/2;
         
-        _constraintContentCentre.constant = percentage*45;
+        _constraintContentCentre.constant = contentViewInitialCentre - percentage*(contentViewInitialCentre - 45);
         _constraintContentLeading.constant = 40 + (1-percentage)*contentViewInitialLeading;
         _constraintContentWidth.constant = 140; 
     }
