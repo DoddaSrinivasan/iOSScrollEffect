@@ -35,4 +35,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgLeading;
 
 
+@property (weak, nonatomic) IBOutlet UILabel *lblContentText;
+@property (weak, nonatomic) IBOutlet UILabel *lblContentNumber;
+
+
 @end

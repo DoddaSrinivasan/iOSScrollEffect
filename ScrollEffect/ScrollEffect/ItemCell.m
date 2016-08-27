@@ -17,7 +17,6 @@
 -(void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
     [super applyLayoutAttributes:layoutAttributes];
     ScrollingLayoutAttributes *attributes = (ScrollingLayoutAttributes *)layoutAttributes;
-    _viewContent.alpha = 0.95;
     _indexPath = attributes.indexPath;
     
     if(_indexPath.item%2 == 0){
@@ -63,7 +62,7 @@
         
         _constraintImgHolderCentre.constant = percentage*25;
         _constraintImgHolderTrailing.constant = 20 + (1-percentage)*imgViewInitialTrailing;
-        _constraintImageHolderWidth.constant = bounds.width*3/4;
+        _constraintImageHolderWidth.constant = bounds.width*4/5;
         _constraintImgTrailing.constant = - 400 + percentage*400;
         _constraintImgLeading.constant = 0;
     }
@@ -83,7 +82,7 @@
         CGFloat contentViewInitialCentre = bounds.height/2;
         
         _constraintContentCentre.constant = contentViewInitialCentre - percentage*(contentViewInitialCentre - 45);
-        _constraintContentLeading.constant = 40 + (1-percentage)*contentViewInitialLeading;
+        _constraintContentLeading.constant = 30 + (1-percentage)*contentViewInitialLeading;
         _constraintContentWidth.constant = 140; 
     }
 }

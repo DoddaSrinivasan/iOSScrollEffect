@@ -35,7 +35,9 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
     cell.viewContent.backgroundColor = [UIColor colorWithPatternImage:_patternImage];
-    [cell.imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%d.jpg",arc4random_uniform(100)%10]]];
+    [cell.imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%d.jpg",arc4random_uniform(100)%9]]];
+    [cell.lblContentText setText:[self randomStringWithLength:7]];
+    [cell.lblContentNumber setText:[NSString stringWithFormat:@"%d", arc4random_uniform(500)]];
     return cell;
 }
 
@@ -49,6 +51,18 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT/4);
+}
+
+-(NSString *) randomStringWithLength: (int) len {
+    NSString *letters = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i=0; i<len; i++) {
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
+    }
+    
+    return randomString;
 }
 
 
