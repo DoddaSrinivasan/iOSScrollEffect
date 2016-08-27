@@ -35,6 +35,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
     cell.viewContent.backgroundColor = [UIColor colorWithPatternImage:_patternImage];
+    [cell.imgView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"car%d.jpg",arc4random_uniform(100)%10]]];
     return cell;
 }
 

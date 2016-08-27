@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "GSTouchesShowingWindow.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+- (GSTouchesShowingWindow *)window {
+    static GSTouchesShowingWindow *window = nil;
+    if (!window) {
+        window = [[GSTouchesShowingWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    }
+    return window;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

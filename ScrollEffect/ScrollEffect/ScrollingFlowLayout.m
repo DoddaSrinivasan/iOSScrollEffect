@@ -39,7 +39,7 @@
     CGFloat collectionViewCentreY = self.collectionView.bounds.size.height*3/4 - 50;
     NSMutableArray<UICollectionViewLayoutAttributes *> *arrayAttributes = [[super layoutAttributesForElementsInRect:rect] mutableCopy];
     for(ScrollingLayoutAttributes *attributes in  arrayAttributes){
-        if(currentSpeed > 1000){
+        if(currentSpeed > 800){
             attributes.percentComplete = 1;
             continue;
         }

@@ -114,7 +114,7 @@
                                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4r-IW-7mr">
                                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-6U-xqP">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-6U-xqP">
                                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                                 </imageView>
                                                             </subviews>
@@ -186,6 +186,7 @@
                                             <outlet property="constraintImgTrailing" destination="HPp-WU-KIs" id="yqa-M1-X1d"/>
                                             <outlet property="constraintWhiteViewLeading" destination="7lg-VA-td1" id="erB-D1-7DU"/>
                                             <outlet property="constraintWhiteViewTrailing" destination="Iok-mo-cby" id="sFa-4m-ic8"/>
+                                            <outlet property="imgView" destination="aRD-6U-xqP" id="iPG-vq-5ZR"/>
                                             <outlet property="viewContent" destination="n2J-k0-Kra" id="Ya2-gM-gjx"/>
                                             <outlet property="viewImage" destination="jJB-Ks-qSW" id="a67-kN-5Oa"/>
                                         </connections>
@@ -217,6 +218,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car.jpg" width="460" height="287"/>
+        <image name="car1.jpg" width="1920" height="1200"/>
     </resources>
 </document>

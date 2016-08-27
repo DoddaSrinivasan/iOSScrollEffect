@@ -29,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintContentLeading;
 
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgTrailing;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImgLeading;
 
